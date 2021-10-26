@@ -31,3 +31,12 @@ Queue:
 2. dequeue() -> space <- O(1), time <- O(1)
 3. peek() -> space <- O(1), time <- O(1)
 4. isEmpty() -> space <- O(1), time <- O(1)
+
+Code Challenge 11
+
+# Challenge Summary
+This code challenge asked for dealing with stack as queue. Use stack methods to simulate queue methods and properties
+
+## Whiteboard Process
+![](./assests/1.png)
+![](./assests/2.png)

@@ -46,5 +46,16 @@ public class App {
       System.out.println(queue2.isEmpty());
       System.out.println(queue2.deQueue());
 
+     PseudoQueue pseudoQueue = new PseudoQueue();
+     pseudoQueue.pseudoEnqueue(5);
+     pseudoQueue.pseudoEnqueue(3);
+     pseudoQueue.pseudoEnqueue(10);
+     System.out.println(pseudoQueue.toString());
+     System.out.println(pseudoQueue.pseudoDequeue());
+
+
     }
+
+
+
 }

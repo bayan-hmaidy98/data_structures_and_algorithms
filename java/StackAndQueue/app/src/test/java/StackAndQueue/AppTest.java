@@ -4,6 +4,7 @@
 package test.java.StackAndQueue;
 
 import main.java.StackAndQueue.App;
+import main.java.StackAndQueue.PseudoQueue;
 import main.java.StackAndQueue.Queue;
 import org.junit.jupiter.api.Test;
 
@@ -51,5 +52,12 @@ class AppTest {
     assertEquals(7, queue1.peek());
     assertEquals("true", queue2.isEmpty().toString());
     assertEquals("false", queue1.isEmpty().toString());
+  }
+  @Test void pseudoQueueTest(){
+    PseudoQueue pseudoQueue = new PseudoQueue();
+    pseudoQueue.pseudoEnqueue(7);
+    pseudoQueue.pseudoEnqueue(10);
+    pseudoQueue.pseudoEnqueue(13);
+    assertEquals(7, pseudoQueue.pseudoDequeue());
   }
 }
