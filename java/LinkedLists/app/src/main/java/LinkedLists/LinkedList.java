@@ -4,7 +4,13 @@ import java.util.ArrayList;
 
 public class LinkedList <T> {
   public Node head;
+
   private int counter = 0;
+  private int size;
+
+  public int size(){
+    return size;
+  }
 
   //working
   public void insert(T value) {
@@ -83,7 +89,7 @@ public class LinkedList <T> {
       }
     }
   }
-
+// working
   public T kth(int k) {
 
     if (counter == 0) {
@@ -102,7 +108,26 @@ public class LinkedList <T> {
     }
     return (T) (k + " is not valid index");
   }
+public static int zipList(LinkedList list1, LinkedList list2){
 
+  Node current1 = list1.head;
+  Node current2 = list2.head;
+  LinkedList newList = new LinkedList();
+  System.out.println(current1.value);
+
+  while(current1 != null || current2 != null){
+    if(current1 != null){
+      newList.append(current1);
+      current1 = current1.getNext();
+    }
+    if(current2 != null){
+      newList.append(current2);
+      current2 = current2.getNext();
+    }
+  }
+
+  return (int) current1.value;
+}
 
   //working
   @Override
