@@ -1,32 +1,35 @@
 package main.java.LinkedLists;
 
+import java.util.ArrayList;
+
 public class LinkedList <T> {
   public Node head;
+  private int counter = 0;
 
-
-//working
-  public void insert(T value){
+  //working
+  public void insert(T value) {
     Node first = new Node(value);
-    if (head == null){
+    if (head == null) {
       head = first;
-    }
-    else{
+    } else {
       first.setNext(head);
       head = first;
     }
   }
-//working
-  public boolean includes(T value){
+
+  //working
+  public boolean includes(T value) {
     Node current = head;
-    while(current != null){
-      if(current.value.equals(value)){
+    while (current != null) {
+      if (current.value.equals(value)) {
         return true;
       }
       current = current.getNext();
     }
     return false;
   }
-//working
+
+  //working
   public void append(T value) {
     Node newNode = new Node(value);
 
@@ -49,39 +52,38 @@ public class LinkedList <T> {
 //working
     Node current = head;
     Node newNode = new Node(newValue);
-    if(head.value == previous){
+    if (head.value == previous) {
       newNode.setNext(head);
       head = newNode;
     }
-    while (current.getNext() != null){
-      if(current.next.value == previous){
+    while (current.getNext() != null) {
+      if (current.next.value == previous) {
 
         newNode.setNext(current.getNext());
         current.setNext(newNode);
         break;
-      }
-      else {
+      } else {
         current = current.getNext();
       }
     }
   }
 
-//working
+  //working
   public void insertAfter(T value, T newValue) {
 
     Node current = head;
-    while (current != null){
-      if(current.value == value){
+    while (current != null) {
+      if (current.value == value) {
         Node newNode = new Node(newValue);
         newNode.setNext(current.getNext());
         current.setNext(newNode);
         break;
-      }
-      else {
+      } else {
         current = current.getNext();
       }
     }
   }
+
 //working
   @Override
   public String toString() {
@@ -94,7 +96,4 @@ public class LinkedList <T> {
     output+= "NULL";
     return output;
   }
-
-
-
 }

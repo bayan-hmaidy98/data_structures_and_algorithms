@@ -26,5 +26,6 @@ public class App {
       linkedList.insertAfter(14,82);
       System.out.println(linkedList.toString());
       System.out.println(linkedList.head.value);
+
     }
 }
