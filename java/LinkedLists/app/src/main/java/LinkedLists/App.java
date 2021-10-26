@@ -20,5 +20,11 @@ public class App {
       System.out.println(linkedList.includes(14));
       System.out.println(linkedList.includes(17));
       System.out.println(linkedList.toString());
+      linkedList.insertBefore(14,7);
+
+      linkedList.append(72);
+      linkedList.insertAfter(14,82);
+      System.out.println(linkedList.toString());
+      System.out.println(linkedList.head.value);
     }
 }
