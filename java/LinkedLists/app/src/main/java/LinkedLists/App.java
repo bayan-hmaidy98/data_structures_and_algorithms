@@ -8,7 +8,7 @@ public class App {
         return "Hello World!";
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         System.out.println(new App().getGreeting());
 
       LinkedList linkedList = new LinkedList();
@@ -29,5 +29,14 @@ public class App {
 
       System.out.println(linkedList.kth(2));
       System.out.println(linkedList.kth(7));
+      LinkedList list1 = new LinkedList();
+      list1.append(1);
+      list1.append(2);
+      list1.append(3);
+      LinkedList list2 = new LinkedList();
+      list2.append(4);
+      list2.append(5);
+      list2.append(6);
+
     }
 }

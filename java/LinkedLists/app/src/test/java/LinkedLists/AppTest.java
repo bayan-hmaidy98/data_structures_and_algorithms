@@ -122,4 +122,16 @@ class AppTest {
     assertEquals(14, linkedList.kth(2));
   }
 
+  @Test void zipListTest(){
+    LinkedList list1 = new LinkedList();
+    list1.append(1);
+    list1.append(2);
+    list1.append(3);
+    LinkedList list2 = new LinkedList();
+    list2.append(4);
+    list2.append(5);
+    list2.append(6);
+    assertEquals(1, LinkedList.zipList(list1, list2));
+  }
+
 }
