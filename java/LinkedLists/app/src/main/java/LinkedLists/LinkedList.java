@@ -83,7 +83,7 @@ public class LinkedList <T> {
       }
     }
   }
-
+// working
   public T kth(int k) {
 
     if (counter == 0) {
@@ -102,8 +102,7 @@ public class LinkedList <T> {
     }
     return (T) (k + " is not valid index");
   }
-
-
+ 
   //working
   @Override
   public String toString() {
