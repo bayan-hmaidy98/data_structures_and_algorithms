@@ -10,6 +10,8 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class AppTest {
+
+  LinkedList linkedList = new LinkedList();
     @Test void appHasAGreeting() {
         App classUnderTest = new App();
         assertNotNull(classUnderTest.getGreeting(), "app should have a greeting");
@@ -17,8 +19,7 @@ class AppTest {
 
 
   @Test
-  void emptyLinkedList(){
-    LinkedList linkedList = new LinkedList();
+  void linkedList(){
     linkedList.insert(5);
     linkedList.insert(20);
     linkedList.insert(14);
@@ -27,6 +28,65 @@ class AppTest {
     assertTrue(linkedList.includes(5));
     assertFalse(linkedList.includes(2));
     assertEquals("{ 9 } -> { 14 } -> { 20 } -> { 5 } -> NULL", linkedList.toString());
+
+  }
+
+  @Test void insertBeforeTest(){
+    linkedList.insert(5);
+    linkedList.insert(20);
+    linkedList.insert(14);
+    linkedList.insert(9);
+    linkedList.insertBefore(14,12);
+    String expected = "{ 9 } -> { 12 } -> { 14 } -> { 20 } -> { 5 } -> NULL";
+//    System.out.println(linkedList.toString());
+    assertEquals(expected, linkedList.toString());
+  }
+  @Test void insertBeforeHeadTest(){
+    linkedList.insert(5);
+    linkedList.insert(20);
+    linkedList.insert(14);
+    linkedList.insert(9);
+    linkedList.insertBefore(9,12);
+    String expected = "{ 12 } -> { 9 } -> { 14 } -> { 20 } -> { 5 } -> NULL";
+//    System.out.println(linkedList.toString());
+    assertEquals(expected, linkedList.toString());
+  }
+
+  @Test void insertAfterTest(){
+    linkedList.insert(5);
+    linkedList.insert(20);
+    linkedList.insert(14);
+    linkedList.insert(9);
+    linkedList.insertAfter(20,25);
+    String expected = "{ 9 } -> { 14 } -> { 20 } -> { 25 } -> { 5 } -> NULL";
+    assertEquals(expected, linkedList.toString());
+  }
+  @Test void insertAtTheEnd(){
+    linkedList.insert(5);
+    linkedList.insert(20);
+    linkedList.insert(14);
+    linkedList.insert(9);
+    linkedList.insertAfter(5,30);
+    String expected = "{ 9 } -> { 14 } -> { 20 } -> { 5 } -> { 30 } -> NULL";
+    assertEquals(expected, linkedList.toString());
+  }
+
+  @Test void append(){
+    linkedList.insert(5);
+    linkedList.insert(20);
+    linkedList.append(13);
+    String expected = "{ 20 } -> { 5 } -> { 13 } -> NULL";
+    assertEquals(expected, linkedList.toString());
+  }
+
+  @Test void appendMultiple(){
+    linkedList.insert(5);
+    linkedList.insert(20);
+    linkedList.append(10);
+    linkedList.append(12);
+    linkedList.append(38);
+    String expected = "{ 20 } -> { 5 } -> { 10 } -> { 12 } -> { 38 } -> NULL";
+    assertEquals(expected, linkedList.toString());
   }
 
 }
