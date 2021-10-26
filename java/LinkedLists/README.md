@@ -11,3 +11,12 @@ Code challenge 06
 ![](./assests/White1.png)
 ![](./assests/White2.png)
 ![](./assests/White3.png)
+
+Code Challenge 07
+
+# kth from the tail function
+
+I have used array list because its easier for searching
+## Whiteboard Process
+
+![White Board](./assests/WhiteBoard.png)
