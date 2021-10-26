@@ -84,7 +84,27 @@ public class LinkedList <T> {
     }
   }
 
-//working
+  public T kth(int k) {
+
+    if (counter == 0) {
+
+      ArrayList<T> arrayConverted = new ArrayList();
+      Node currentNode = head;
+      while (currentNode != null) {
+        arrayConverted.add((T) currentNode.value);
+//          [i] = currentNode.value;
+        currentNode = currentNode.next;
+      }
+      int index = arrayConverted.size() - k - 1;
+      if (index > 0) {
+        return arrayConverted.get(index);
+      }
+    }
+    return (T) (k + " is not valid index");
+  }
+
+
+  //working
   @Override
   public String toString() {
     Node current = head;

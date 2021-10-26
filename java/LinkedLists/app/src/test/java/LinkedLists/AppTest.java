@@ -89,5 +89,37 @@ class AppTest {
     assertEquals(expected, linkedList.toString());
   }
 
+  @Test void kGreater(){
+    linkedList.insert(5);
+    linkedList.insert(20);
+    linkedList.insert(14);
+    linkedList.insert(9);
+    String expected = "7 is not valid index";
+    assertEquals(expected, linkedList.kth(7));
+  }
+
+  @Test void kEquals(){
+    linkedList.insert(5);
+    linkedList.insert(20);
+    linkedList.insert(14);
+    linkedList.insert(9);
+    String expected = "4 is not valid index";
+    assertEquals(expected, linkedList.kth(4));
+  }
+
+  @Test void sizeOne(){
+    linkedList.insert(5);
+    System.out.println(linkedList.kth(0));
+  }
+
+  @Test void happyPath(){
+    linkedList.insert(5);
+    linkedList.insert(20);
+    linkedList.insert(14);
+    linkedList.insert(9);
+    linkedList.insert(3);
+    linkedList.insert(25);
+    assertEquals(14, linkedList.kth(2));
+  }
 
 }
