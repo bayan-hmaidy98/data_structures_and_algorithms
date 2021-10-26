@@ -16,7 +16,17 @@ Code Challenge 07
 
 # kth from the tail function
 
-I have used array list because its easier for searching
+I have used array list because it's easier for searching
 ## Whiteboard Process
 
 ![White Board](./assests/WhiteBoard.png)
+
+Code Challenge 08
+
+# ZipList
+
+This function zip 2 input linked lists in one linked list and return the head of it.
+
+## Whiteboard Process
+
+![White Board](./assests/8.png)
