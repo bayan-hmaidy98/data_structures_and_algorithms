@@ -46,6 +46,15 @@ Code Challenge 12
 
 # Challenge Summary
 This code challenge asked to make animal shelter class to add specific kind of animals in queue and remove it when required.
-
+.
 ## Whiteboard Process
 ![](./assests/3.png)
+
+
+Code Challenge 13
+
+# Challenge Summary
+This code challenge asked function returns boolean to check the brackets inside it parameter (string), if they are balanced or not.
+.
+## Whiteboard Process
+![](./assests/4.png)
