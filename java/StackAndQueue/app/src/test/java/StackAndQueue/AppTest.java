@@ -5,8 +5,7 @@ package StackAndQueue;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.*;
 
 class AppTest {
     @Test void appHasAGreeting() {
@@ -80,5 +79,19 @@ class AppTest {
     String expected = "AnimalShelter{catList= { Cat3 }  -> { NULL }, dogList= { Dog2 }  -> { NULL }}";
 
     assertEquals(expected,Animal.toString());
+  }
+
+  @Test
+  void test1() {
+    Brackets BracketsTest= new Brackets();
+    String test= "{{}}";
+    String test1= "{}";
+    String test2= "{{(}}";
+    String test3= "{{))}}";
+
+    assertTrue(BracketsTest.validateBrackets(test));
+    assertTrue(BracketsTest.validateBrackets(test1));
+    assertFalse(BracketsTest.validateBrackets(test2));
+    assertFalse(BracketsTest.validateBrackets(test3));
   }
 }
