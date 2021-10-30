@@ -40,3 +40,12 @@ This code challenge asked for dealing with stack as queue. Use stack methods to 
 ## Whiteboard Process
 ![](./assests/1.png)
 ![](./assests/2.png)
+
+
+Code Challenge 12
+
+# Challenge Summary
+This code challenge asked to make animal shelter class to add specific kind of animals in queue and remove it when required.
+
+## Whiteboard Process
+![](./assests/3.png)

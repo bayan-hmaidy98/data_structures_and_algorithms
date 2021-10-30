@@ -1,4 +1,4 @@
-package main.java.StackAndQueue;
+package StackAndQueue;
 
 public class PseudoQueue <T> {
   Stack stack1 = new Stack();
