@@ -30,3 +30,12 @@ In this code challenge we were asked to find the maximum value in the tree.
 
 ## Whiteboard Process
 ![](./assests/5.png)
+
+
+# Code Challenge 17
+
+## Breadth first
+In this code challenge we were asked to arrange the tree in breadth first order
+
+## Whiteboard Process
+![](./assests/6.png)
