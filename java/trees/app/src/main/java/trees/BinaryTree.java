@@ -1,8 +1,9 @@
 package trees;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class BinaryTree <T>{
+public class BinaryTree <T> {
 
   public Node<T> getRoot() {
     return root;
@@ -12,61 +13,33 @@ public class BinaryTree <T>{
     this.root = root;
   }
 
-  public Node<T> root;
+  ArrayList<T> list = new ArrayList<>();
+  Node root;
 
-  public ArrayList<T> preOrder(Node root) throws IllegalArgumentException{
-    ArrayList <T> list = new ArrayList();
-    if(root != null){
-      list.add((T) root);
-
-      if(root.getLeft() != null){
-        list.add((T) preOrder(root.getLeft()));
-      }
-      if(root.getRight() != null){
-        list.add((T) preOrder(root.getRight()));
-      }
+  public ArrayList<T> preOrder(Node root) {
+    if (root != null) {
+      list.add((T) root.getValue());
+      preOrder(root.getLeft());
+      preOrder(root.getRight());
     }
-    else {
-      throw new IllegalArgumentException("The tree is empty");
+
+    return list;
+  }
+
+  public ArrayList<T> inOrder(Node root) {
+    if (root != null) {
+      inOrder(root.getLeft());
+      list.add((T) root.getValue());
+      inOrder(root.getRight());
     }
     return list;
   }
 
-
-  public ArrayList<T> inOrder(Node root) throws IllegalArgumentException{
-    ArrayList<T> list = new ArrayList();
-
-    if (root != null){
-      if (root.getLeft() != null){
-        list.add((T) inOrder(root.getLeft()));
-      }
-      list.add((T) root);
-
-      if (root.getRight() != null){
-        list.add((T) inOrder(root.getRight()));
-      }
-    }
-    else {
-      throw new IllegalArgumentException("The tree is empty");
-    }
-    return list;
-  }
-
-  public ArrayList<T> postOrder(Node root) throws IllegalArgumentException{
-    ArrayList<T> list = new ArrayList<>();
-
-    if (root != null){
-      if(root.getLeft() != null){
-        list.add((T) postOrder(root.getLeft()));
-      }
-      if(root.getRight() != null){
-        list.add((T) postOrder(root.getRight()));
-      }
-
-      list.add((T) root);
-    }
-    else {
-      throw new IllegalArgumentException("The tree is empty");
+  public ArrayList<T> postOrder(Node root) {
+    if (root != null) {
+      inOrder(root.getLeft());
+      inOrder(root.getRight());
+      list.add((T) root.getValue());
     }
     return list;
   }

@@ -5,6 +5,8 @@ package trees;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class AppTest {
@@ -22,22 +24,17 @@ class AppTest {
   }
 
   @Test
-  void rootBinarySearchTree() {
+  void leftAndRightTest() {
     BinarySearchTree<Integer> bst = new BinarySearchTree<>();
 
 
-    bst.add(1);
+    bst.add(10);
     bst.add(2);
-//    bst.add(3);
-//    bst.ad
-//    d(4);
-//    bst.add(5);
-//    bst.contain(1);
+    bst.add(13);
 
-    System.out.println(bst.getRoot().getValue());
-    System.out.println(bst.root.getLeft());
-//    assertEquals("1", bst.preOrder(bst.root).toString());
-
+    assertEquals(10, bst.getRoot().getValue());
+    assertEquals(2, bst.root.getLeft().getValue());
+    assertEquals(13, bst.root.getRight().getValue());
   }
   @Test void emptyTreeInstantiation (){
     BinarySearchTree<Integer> bst = new BinarySearchTree<>();
@@ -45,8 +42,47 @@ class AppTest {
   }
   @Test void oneRootTree(){
     BinarySearchTree<Integer> bst = new BinarySearchTree<>();
-//    bst.add(a, 10);
-    assertEquals("1", bst.preOrder(bst.root).toString());
+    bst.add(10);
+    bst.add(20);
+    bst.add(3);
+    assertEquals(10,bst.root.getValue() );
   }
 
+  @Test void preorderTest(){
+    BinarySearchTree<Integer> bst = new BinarySearchTree<>();
+    bst.add(10);
+    bst.add(20);
+    bst.add(30);
+    ArrayList arr = new ArrayList();
+    arr.add(10);
+    arr.add(20);
+    arr.add(30);
+    assertEquals(arr, bst.preOrder(bst.root));
+  }
+
+  @Test void inorderTest(){
+    BinarySearchTree<Integer> bst = new BinarySearchTree<>();
+    bst.add(20);
+    bst.add(10);
+    bst.add(30);
+    System.out.println(bst);
+    ArrayList arr = new ArrayList();
+    arr.add(10);
+    arr.add(20);
+    arr.add(30);
+    assertEquals(arr, bst.inOrder(bst.root));
+  }
+
+  @Test void postorderTest(){
+    BinarySearchTree<Integer> bst = new BinarySearchTree<>();
+    bst.add(20);
+    bst.add(10);
+    bst.add(30);
+    System.out.println(bst);
+    ArrayList arr = new ArrayList();
+    arr.add(10);
+    arr.add(30);
+    arr.add(20);
+    assertEquals(arr, bst.postOrder(bst.root));
+  }
 }
