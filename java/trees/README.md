@@ -22,3 +22,11 @@ add method:
 contain method:
 1. space <- O(1)
 2. time <- O(n)
+
+# Code Challenge 16
+
+## Tree Maximum
+In this code challenge we were asked to find the maximum value in the tree.
+
+## Whiteboard Process
+![](./assests/5.png)
