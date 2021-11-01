@@ -3,37 +3,40 @@ package trees;
 public class BinarySearchTree <T> extends BinaryTree <T>{
 
 
-  public boolean contain(Node <T> root, T value){
-
-    if (root == null) return false;
-    if(root.getValue() == value) return true;
-    return contain(root.getLeft(), value) || contain(root.getRight(), value);
+  public boolean contain(T value){
+    Node current = this.getRoot();
+    if (current == null) return false;
+    if(current.equals(value)) return true;
+    return contain((T) current.getLeft()) || contain((T) current.getRight());
   }
 
-  public void add(Node<Integer> root, Integer value){
-    Node<Integer> newNode = new Node(value);
 
-      if(root == null){
-        root.equals(newNode);
-      }
-      if (value > root.getValue()) {
-        if (root.getLeft() == null) {
-          root.setLeft(newNode);
-          return;
-        } else {
-          add(root.getLeft(), value);
-        }
-      }
-      if (value >  root.getValue()){
-       if (root.getRight() == null){
-         root.setRight(newNode);
-         return;
-       }
-       else {
-         add(root.getRight(), value);
-       }
-      }
+  public void add(T value){
 
+    Node current = new Node(this.root);
 
+    if (this.getRoot() == null) {
+      this.setRoot(new Node<>(value));
+      return;
+    }
+
+    else if ((int) value < (int) current.getValue() ) {
+      if (current.getLeft() == null) {
+        current.setLeft(new Node<>(value));
+
+        return;
+      } else {
+        add((T) current.getLeft().getValue());
+      }
+    }
+    else if ((int) value > (int) current.getValue()){
+      if (current.getRight() == null){
+        current.setRight(new Node<>(value));
+        return;
+      }
+      else {
+        add((T) current.getRight().getValue());
+      }
+    }
   }
   }

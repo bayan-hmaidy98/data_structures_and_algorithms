@@ -4,6 +4,14 @@ import java.util.ArrayList;
 
 public class BinaryTree <T>{
 
+  public Node<T> getRoot() {
+    return root;
+  }
+
+  public void setRoot(Node<T> root) {
+    this.root = root;
+  }
+
   public Node<T> root;
 
   public ArrayList<T> preOrder(Node root) throws IllegalArgumentException{
