@@ -8,13 +8,6 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class AppTest {
-  Node a = new Node(1);
-  Node b = new Node(2);
-  Node c = new Node(3);
-  Node d = new Node(4);
-  Node e = new Node(5);
-  Node f = new Node(6);
-
 
   @Test
   void appHasAGreeting() {
@@ -31,15 +24,18 @@ class AppTest {
   @Test
   void rootBinarySearchTree() {
     BinarySearchTree<Integer> bst = new BinarySearchTree<>();
-    
-    a.setLeft(b);
-    a.setRight(c);
-    b.setLeft(d);
-    b.setRight(e);
-    c.setLeft(f);
-    bst.add(a, 7);
-    System.out.println(bst.contain(a, 4));
-    System.out.println(bst.root.getValue());
+
+
+    bst.add(1);
+    bst.add(2);
+//    bst.add(3);
+//    bst.ad
+//    d(4);
+//    bst.add(5);
+//    bst.contain(1);
+
+    System.out.println(bst.getRoot().getValue());
+    System.out.println(bst.root.getLeft());
 //    assertEquals("1", bst.preOrder(bst.root).toString());
 
   }
@@ -49,8 +45,8 @@ class AppTest {
   }
   @Test void oneRootTree(){
     BinarySearchTree<Integer> bst = new BinarySearchTree<>();
-    bst.add(a, 10);
-    assertEquals("10", bst.preOrder(bst.root).toString());
+//    bst.add(a, 10);
+    assertEquals("1", bst.preOrder(bst.root).toString());
   }
 
 }
