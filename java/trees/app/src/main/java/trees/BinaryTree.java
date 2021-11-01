@@ -70,4 +70,19 @@ public class BinaryTree <T>{
     }
     return list;
   }
+
+  public String treeMax(){
+    if (root == null) {
+      return "Empty";
+    }
+    int max = 0;
+    ArrayList<T> maxTree = preOrder(root);
+
+    for (int i = 0; i < maxTree.size(); i++) {
+      if(Integer.parseInt(""+maxTree.get(i)) > max){
+        max =Integer.parseInt(""+maxTree.get(i));
+      }
+    }
+    return "The maximum number is "+max;
+  }
 }

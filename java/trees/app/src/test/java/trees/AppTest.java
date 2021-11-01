@@ -46,7 +46,7 @@ class AppTest {
   @Test void oneRootTree(){
     BinarySearchTree<Integer> bst = new BinarySearchTree<>();
 //    bst.add(a, 10);
-    assertEquals("10", bst.preOrder(bst.root).toString());
+    assertEquals("1", bst.preOrder(bst.root).toString());
   }
 
 }

@@ -13,9 +13,9 @@ public class BinarySearchTree <T> extends BinaryTree <T>{
 
   public void add(T value){
 
-    Node current = new Node(this.root);
+    Node current = this.root;
 
-    if (this.getRoot() == null) {
+    if (this.root == null) {
       this.setRoot(new Node<>(value));
       return;
     }
