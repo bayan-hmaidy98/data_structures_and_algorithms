@@ -85,4 +85,16 @@ class AppTest {
     arr.add(20);
     assertEquals(arr, bst.postOrder(bst.root));
   }
+
+  @Test void findMaxTest(){
+    BinarySearchTree<Integer> bst = new BinarySearchTree<>();
+    bst.add(20);
+    bst.add(10);
+    bst.add(30);
+    assertEquals(30, bst.treeMax());
+  }
+   @Test void emptyMaxTree(){
+     BinarySearchTree<Integer> bst = new BinarySearchTree<>();
+     assertEquals(0, bst.treeMax());
+   }
 }

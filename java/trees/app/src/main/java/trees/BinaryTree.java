@@ -1,7 +1,6 @@
 package trees;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class BinaryTree <T> {
 
@@ -44,18 +43,19 @@ public class BinaryTree <T> {
     return list;
   }
 
-  public String treeMax(){
-    if (root == null) {
-      return "Empty";
-    }
+  public int treeMax(){
     int max = 0;
+    if (root == null) {
+      return max;
+    }
+
     ArrayList<T> maxTree = preOrder(root);
 
     for (int i = 0; i < maxTree.size(); i++) {
-      if(Integer.parseInt(""+maxTree.get(i)) > max){
+      if(Integer.parseInt("" + maxTree.get(i)) > max){
         max =Integer.parseInt(""+maxTree.get(i));
       }
     }
-    return "The maximum number is "+max;
+    return max;
   }
 }
