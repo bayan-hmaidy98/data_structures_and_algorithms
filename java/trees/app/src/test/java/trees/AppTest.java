@@ -97,4 +97,22 @@ class AppTest {
      BinarySearchTree<Integer> bst = new BinarySearchTree<>();
      assertEquals(0, bst.treeMax());
    }
+
+   @Test void breadthFirst(){
+//     BinarySearchTree<Integer> bst = new BinarySearchTree<>();
+//     bst.add(20);
+//     bst.add(10);
+//     bst.add(30);
+//     System.out.println(BinaryTree);
+     BinarySearchTree<Integer> tree = new BinarySearchTree<>();
+     tree.add(10);
+     tree.add(5);
+     tree.add(15);
+     tree.add(4);
+     tree.add(7);
+     tree.add(14);
+     tree.add(20);
+
+     assertEquals("[10, 5, 15, 4, 7, 14, 20]",BinaryTree.breadthFirst(tree).toString());
+   }
 }
