@@ -1,4 +1,5 @@
-package main.java.StackAndQueue;
+package StackAndQueue;
+import main.java.StackAndQueue.Node;
 
 public class Queue <T>{
 
@@ -6,13 +7,13 @@ public class Queue <T>{
   Node back;
 
   public void enQueue(T value){
+    Node newNode = new Node(value);
+
     if (front == null){
-      Node newNode = new Node(value);
       front = newNode;
       back = newNode;
     }
     else {
-      Node newNode = new Node(value);
       back.setNext(newNode);
       back = newNode;
     }

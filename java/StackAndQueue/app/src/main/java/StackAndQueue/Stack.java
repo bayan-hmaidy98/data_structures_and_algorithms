@@ -1,8 +1,9 @@
-package main.java.StackAndQueue;
+package StackAndQueue;
+import main.java.StackAndQueue.Node;
 
 public class Stack <T> {
 
-  public Node top;
+  Node top;
 
   public void push(T value){
     Node newNode = new Node(value);
