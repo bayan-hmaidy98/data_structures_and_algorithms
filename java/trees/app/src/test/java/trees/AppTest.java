@@ -115,4 +115,5 @@ class AppTest {
 
      assertEquals("[10, 5, 15, 4, 7, 14, 20]",BinaryTree.breadthFirst(tree).toString());
    }
+   
 }
