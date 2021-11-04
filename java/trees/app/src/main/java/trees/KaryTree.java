@@ -1,20 +1,20 @@
 package trees;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 
- class KaryTree<T> {
+ class KTree <T>{
 
-  KaryNode root=null;
-  int values = 0;
-  int k =0;
+  TreeNode root = null;
+  int nodes = 0;
+  int K=0;
 
 
-  public KaryTree(int k) {
-    if(k<=1)
-      k=2;
-    this.k = k;
+  public KTree(int k) {
+    if(k<=1) {
+      k = 2;
+    }
+    this.K = k;
   }
 
   public boolean isEmpty() {
@@ -27,48 +27,62 @@ import java.util.Queue;
   }
 
   public void add(T value){
-    values++;
-    KaryNode newNode = new KaryNode(value);
+    nodes++;
+    TreeNode newNode = new TreeNode(value);
     if( isEmpty()){
       root = newNode;
       return;
     }
-    Queue<KaryNode> queue = new LinkedList<>();
+    Queue<TreeNode> queue = new LinkedList<>();
     queue.add(root);
     while(!queue.isEmpty()){
 
-      KaryNode current = queue.poll();
-      if(current.children.size() < this.k){
-        current.addChild(newNode);
+      TreeNode currentNode = queue.poll();
+      if(currentNode.children.size() < this.K){
+        currentNode.addChild(newNode);
         return;
       }
       else {
-        queue.addAll(current.children);
+        queue.addAll(currentNode.children);
       }
     }
   }
 
-  public ArrayList<T> breadthFirstSearch(){
-    ArrayList <T> tree = new ArrayList<>();
-    Queue<KaryNode> queue = new LinkedList<>();
-    if(isNotEmpty()){
-      queue.add(root);
+
+  public  KTree<String> fizzBuzzTree(KTree<Integer> kTree){
+    KTree<String> outTree = new KTree(kTree.K);
+
+    Queue<TreeNode> queue = new LinkedList<>();
+    if(kTree.isNotEmpty()){
+      queue.add(kTree.root);
       while(!queue.isEmpty()){
-        KaryNode current = queue.poll();
-        tree.add((T)current.value);
-        if(! current.children.isEmpty())
-          queue.addAll(current.children);
+
+        TreeNode<Integer> currentNode = queue.poll();
+
+        String currentValue;
+        if(currentNode.value % 15 == 0 )
+          currentValue = "FizzBuzz";
+        else if(currentNode.value % 3 == 0)
+          currentValue="Fizz";
+        else if(currentNode.value % 5 == 0)
+          currentValue="Buzz";
+        else
+          currentValue=currentNode.value.toString();
+
+        outTree.add(currentValue);
+
+        if(! currentNode.children.isEmpty())
+          queue.addAll(currentNode.children);
       }
     }
-    return tree;
+    return outTree;
   }
-
   @Override
   public String toString() {
-    return "K_aryTree{" +
-      "root=" + root +
-      ", values=" + values +
-      ", K=" + k +
+    return "K-ary tree (K="+this.K+"): {" +
+      "\n root=" + root +
+      "\nnodes=" + nodes +
       '}';
   }
+
 }
