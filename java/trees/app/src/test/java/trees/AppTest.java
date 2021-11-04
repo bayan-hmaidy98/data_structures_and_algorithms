@@ -115,5 +115,16 @@ class AppTest {
 
      assertEquals("[10, 5, 15, 4, 7, 14, 20]",BinaryTree.breadthFirst(tree).toString());
    }
-   
+@Test void kAryTest(){
+    KTree<Integer> tree = new KTree(4);
+    tree.add(5);
+    tree.add(2);
+    tree.add(7);
+    tree.add(15);
+    tree.add(3);
+    tree.fizzBuzzTree(tree);
+  System.out.println(tree);
+
+}
+
 }

@@ -3,23 +3,32 @@ package trees;
 import java.util.ArrayList;
 import java.util.List;
 
-class KaryNode <T>{
-  T value;
-  List<KaryNode> children = new ArrayList<>();
+class TreeNode<T> {
 
-  public KaryNode(T value) {
+  public T value;
+  public List<TreeNode> children = new ArrayList<>();
+
+  public TreeNode(T value) {
     this.value = value;
   }
 
-  public void addChild(KaryNode ch) {
-    this.children.add(ch);
+
+  public void addChild(TreeNode child) {
+    this.children.add(child);
   }
 
   @Override
   public String toString() {
-    return "KaryNode{" +
-      "value=" + value +
-      ", children=" + children +
-      '}';
+    StringBuilder result = new StringBuilder("{ value = ");
+    result.append(value);
+    result.append(" Children: [");
+    for (TreeNode ch : children) {
+      result.append("\n child: ");
+      result.append(ch);
+    }
+    result.append("]");
+//        result.append(" }");
+
+    return result.toString();
   }
 }
