@@ -4,6 +4,10 @@
 package Android;
 
 import org.junit.jupiter.api.Test;
+
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class AppTest {
@@ -14,10 +18,18 @@ class AppTest {
 
     @Test void testInsertionSort(){
 
-      InsertionSort sort = new InsertionSort();
+      Sort sort = new Sort();
       int[] array = {8, 4, 23, 42, 16, 15};
       int[] arraySorted = {4, 8, 15, 16, 23, 42};
 
       assertArrayEquals(sort.insertionSort(array), arraySorted );
+    }
+
+    @Test void testMergeSort(){
+      Sort sort = new Sort();
+      int[] array = {8, 4, 23, 42, 16, 15};
+      int[] arraySorted = {4, 8, 15, 16, 23, 42};
+      sort.mergeSort(array);
+      assertArrayEquals(array,arraySorted);
     }
 }

@@ -2,7 +2,7 @@
 This code challenge asked to sort an array in ascending order
 
 ## Whiteboard Process
-![](./assets/111.png)
+![](111.png)
 
 ## Blog
-[Blog.md](./BLOG.md)
+[Blog.md](BLOG.md)
