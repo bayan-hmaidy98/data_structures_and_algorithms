@@ -32,4 +32,22 @@ class AppTest {
       sort.mergeSort(array);
       assertArrayEquals(array,arraySorted);
     }
+
+  @Test
+  public void quickSortWithNormalArray(){
+    Sort sort = new Sort();
+    int[] array = {8,4,23,42,16,15};
+    int[] outputArray = sort.quickSort(array);
+    int[] expectedOutput = {4,8,15,16,23,42};
+    assertArrayEquals(expectedOutput,outputArray);
+  }
+
+  @Test
+  public void quickSortWithEmptyArray(){
+    Sort sort = new Sort();
+    int[] array = {};
+    int[] outputArray = sort.quickSort(array);
+    int[] expectedOutput = {};
+    assertArrayEquals(expectedOutput,outputArray);
+  }
 }
