@@ -1,6 +1,7 @@
 package HashTables;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class HashTable <K, V>{
 
@@ -18,6 +19,21 @@ public class HashTable <K, V>{
     for (int i = 0; i < buckets; i++) {
       table.add(null);
     }
+  }
+
+  public  String repeatedWord(String string) {
+    String output = null;
+    String[] stringArr = string.split(" ");
+    HashTable hashTable = new HashTable<>();
+
+    for (int i = 0; i < stringArr.length; i++) {
+      if (hashTable.contains(stringArr[i])) {
+        output = stringArr[i];
+        break;
+      }
+      hashTable.add(stringArr[i].toLowerCase(), i);
+    }
+    return output;
   }
 
   public int hash(K key) {

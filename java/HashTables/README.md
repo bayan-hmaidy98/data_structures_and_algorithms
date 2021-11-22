@@ -36,3 +36,10 @@ time: O(n) while searching if key exist in the linked list or not
 In hash method, complexity was:
 space: O(1) only one variable is used for hashing
 time: O(1) only one variable is saved in the memory (finding hash value)
+
+
+# Code Challenge 31
+We were asked to create a function returns the first repeated value of an input string
+
+## Whiteboard Process
+![](./assets/31.png)
