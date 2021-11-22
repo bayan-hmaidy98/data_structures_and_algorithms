@@ -112,4 +112,14 @@ public class HashTable <K, V>{
     return false;
   }
 
+  @Override
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("{");
+    for (HashNode<K, V> bucket : table) {
+      if (bucket != null) sb.append(bucket.toString()).append(", ");
+    }
+    if (sb.length() == 1) return "{}";
+    return sb.substring(0, sb.toString().trim().length() - 1) + "}";
+  }
 }
