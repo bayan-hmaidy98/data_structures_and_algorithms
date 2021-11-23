@@ -4,6 +4,9 @@
 package HashTables;
 
 import org.junit.jupiter.api.Test;
+
+import java.util.TreeSet;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class AppTest {
@@ -44,4 +47,22 @@ class AppTest {
     assertEquals("it", test.repeatedWord(input2));
     assertEquals("summer", test.repeatedWord(input3));
   }
+
+//  @Test void testTreeComparison(){
+//    TreeSet tree1 = new TreeSet();
+//    TreeSet tree2 = new TreeSet();
+//
+//    tree1.add(1);
+//    tree1.add(2);
+//    tree1.add(3);
+//    tree1.add(4);
+//
+//    tree2.add(1);
+//    tree2.add(4);
+//    tree2.add(9);
+//    tree2.add(16);
+//
+//    TreeIntersection treeIntersection = new TreeIntersection();
+//    System.out.println(treeIntersection.treeComparing(tree1,tree2).toString());
+//  }
 }
