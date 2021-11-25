@@ -1,7 +1,8 @@
 package HashTables;
 
 import java.util.ArrayList;
-import java.util.Locale;
+import java.util.HashMap;
+import java.util.List;
 
 public class HashTable <K, V>{
 
@@ -110,6 +111,14 @@ public class HashTable <K, V>{
       head = head.next;
     }
     return false;
+  }
+
+  public ArrayList<String> liftJoin(HashMap map1, HashMap map2){
+    List<String> leftJoinList = new ArrayList();
+    for (Object item: map1.keySet()){
+      leftJoinList.add("{" + item+ ": "+ map1.get(item) +", "+ map2.get(item) + "}");
+    }
+    return (ArrayList<String>) leftJoinList;
   }
 
   @Override
