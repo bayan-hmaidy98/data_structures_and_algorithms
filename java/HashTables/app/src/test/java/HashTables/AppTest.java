@@ -5,6 +5,7 @@ package HashTables;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.HashMap;
 import java.util.TreeSet;
 
 import static org.junit.jupiter.api.Assertions.*;

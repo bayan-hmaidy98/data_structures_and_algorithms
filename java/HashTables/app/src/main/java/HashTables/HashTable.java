@@ -1,7 +1,8 @@
 package HashTables;
 
 import java.util.ArrayList;
-import java.util.Locale;
+import java.util.HashMap;
+import java.util.List;
 
 public class HashTable <K, V>{
 
