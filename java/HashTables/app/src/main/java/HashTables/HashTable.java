@@ -113,6 +113,14 @@ public class HashTable <K, V>{
     return false;
   }
 
+  public ArrayList<String> liftJoin(HashMap map1, HashMap map2){
+    List<String> leftJoinList = new ArrayList();
+    for (Object item: map1.keySet()){
+      leftJoinList.add("{" + item+ ": "+ map1.get(item) +", "+ map2.get(item) + "}");
+    }
+    return (ArrayList<String>) leftJoinList;
+  }
+
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();

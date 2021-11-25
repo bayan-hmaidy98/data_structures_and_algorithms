@@ -43,3 +43,10 @@ We were asked to create a function returns the first repeated value of an input 
 
 ## Whiteboard Process
 ![](./assets/31.png)
+
+# Code Challenge 33
+We were asked to create a function returns list of two gathered hashmaps that have some common keys
+
+## Whiteboard Process
+![](./assets/32.png)
+
