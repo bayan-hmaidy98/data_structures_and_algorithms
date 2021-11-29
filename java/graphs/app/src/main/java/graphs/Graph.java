@@ -1,56 +1,80 @@
 package graphs;
 
+import graph.Vertex;
+
 import java.util.*;
 
 public class Graph<T> {
-  List<Node<T>> graphList;
 
-  public Graph(){
-    graphList = new ArrayList<>();
+
+  Map<graph.Vertex<T>, ArrayList<graph.Vertex<T>>> map = new HashMap<>();
+
+  List<graph.Vertex<T>> MyList = new ArrayList<>();
+
+  public graph.Vertex<T> addNode(T value) {
+
+    graph.Vertex vertex = new graph.Vertex(value);
+    map.put(vertex, new ArrayList<>());
+    return vertex;
+
   }
 
-  public void addNode(Node<T> node){
-    graphList.add(node);
+  public Map<graph.Vertex<T>, ArrayList<graph.Vertex<T>>> getMap() {
+    return map;
   }
 
-  public void addEdge(Node n1, Node n2){
-    if(graphList.contains(n1) && graphList.contains(n2)){
-      Node current = n1;
-      while(current.next != null){
-        current = current.next;
+  public void setMap(Map<graph.Vertex<T>, ArrayList<graph.Vertex<T>>> map) {
+    this.map = map;
+  }
+
+  public void addEdge(graph.Vertex nodeOne, graph.Vertex nodeTwo) {
+    map.get(nodeOne).add(nodeTwo);
+    map.get(nodeTwo).add(nodeOne);
+  }
+
+
+  public ArrayList<graph.Vertex> getNodes() {
+
+    if (map.isEmpty()) {
+      return null;
+    }
+
+    ArrayList<graph.Vertex> list = new ArrayList<>();
+    list.addAll(map.keySet());
+    return list;
+
+  }
+
+  public ArrayList<graph.Vertex<T>> getNeighbors(graph.Vertex node) {
+    return map.get(node);
+  }
+
+  public int getSize() {
+    return map.size();
+  }
+
+
+  public List<graph.Vertex> breadthFirstSearch(graph.Vertex startVertex) {
+    Queue<graph.Vertex> queue = new Queue<graph.Vertex>();
+    List<graph.Vertex> visited = new ArrayList<>();
+
+    queue.enqueue(startVertex);
+    visited.add(startVertex);
+
+    while (!queue.IsEmpty()) {
+      graph.Vertex current = queue.dequeue();
+
+      for (graph.Vertex result : getNeighbors(current)) {
+        if (!visited.contains(result)) {
+          queue.enqueue(result);
+          visited.add(result);
+        }
       }
-      current.next = n2;
-    } else
-      System.out.println("Invalid");
-  }
-
-  public List<Node<T>> getNodes(){
-    return graphList;
-  }
-
-  public List<Node<T>> getNeighbors(Node n){
-    List<Node<T>> edgeList = new ArrayList<>();
-    Node current = n;
-    while(current != null){
-      edgeList.add(current);
-      current = current.next;
     }
-    return edgeList;
+    return visited;
   }
 
-  public int size(){
-    return graphList.size();
-  }
 
-  @Override
-  public String toString() {
-    String result = "[";
-    for (int i = 0 ; i < graphList.size() - 1 ; i++){
-      result += graphList.get(i).value + ", ";
-    }
-    result += graphList.get(graphList.size()-1).value + "]";
-    return result;
-  }
 
 
 }
