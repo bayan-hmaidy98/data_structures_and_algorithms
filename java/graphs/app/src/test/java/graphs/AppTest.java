@@ -37,49 +37,48 @@ class AppTest {
     assertEquals("Naboo", breadthFirst.get(5).Value);
   }
 
-  @Test
+  @Test void depth(){
+    Graph graph = new Graph();
+    Vertex vertex = graph.addNode("1");
+    Vertex vertex1 =  graph.addNode("2");
+    Vertex vertex2 = graph.addNode("3");
+    Vertex vertex3 = graph.addNode("4");
+    Vertex vertex4 = graph.addNode("5");
+    Vertex vertex5 = graph.addNode("6");
+    Vertex vertex6 = graph.addNode("7");
+    Vertex vertex7 = graph.addNode("8");
+    Vertex vertex8 = graph.addNode("9");
+    Vertex vertex9 = graph.addNode("10");
 
-  public void test12() {
+
+    graph.addEdge(vertex,vertex1);
+    graph.addEdge(vertex,vertex3);
+    graph.addEdge(vertex1,vertex2);
+    graph.addEdge(vertex1,vertex3);
+    graph.addEdge(vertex2,vertex6);
+    graph.addEdge(vertex3,vertex4);
+    graph.addEdge(vertex3,vertex7);
+    graph.addEdge(vertex3,vertex5);
+    graph.addEdge(vertex7,vertex5);
+    graph.addEdge(vertex7,vertex8);
+    graph.addEdge(vertex8,vertex9);
+
+    List<Vertex<String>> MyList = new ArrayList<>();
+    MyList.add(vertex);
+    MyList.add(vertex1);
+    MyList.add(vertex2);
+    MyList.add(vertex6);
+    MyList.add(vertex3);
+    MyList.add(vertex4);
+    MyList.add(vertex7);
+    MyList.add(vertex5);
+    MyList.add(vertex8);
+    MyList.add(vertex9);
+
+    assertEquals(MyList , graph.depthFirstSearch(vertex));
 
 
-//    graph.addEdge("Pandora", "Arendelle", 150);
-//    graph.addEdge("Pandora", "Metroville", 82);
-//
-//
-//    graph.addEdge("Arendelle", "Metroville", 99);
-//    graph.addEdge("Arendelle", "Monstroplolis", 42);
-//
-//    graph.addEdge("Metroville", "Monstroplolis", 105);
-//    graph.addEdge("Metroville", "Narnia", 37);
-//    graph.addEdge("Metroville", "Naboo", 26);
-//
-//    graph.addEdge("Monstroplolis", "Naboo", 73);
-//    graph.addEdge("Narnia", "Naboo", 250);
-//
-//    path.add("Metroville");
-//    path.add("Pandora");
-//
-//    assertEquals("True, $82", graph.graphBusinessTrip(graph, path));
-//
-//    ArrayList<String> path1 = new ArrayList<>();
-//    path1.add("Arendelle");
-//    path1.add("Monstroplolis");
-//    path1.add("Naboo");
-//
-//    assertEquals("True, $115", graph.graphBusinessTrip(graph, path1));
-//
-//    ArrayList<String> path2 = new ArrayList<>();
-//    path2.add("Naboo");
-//    path2.add("Pandora");
-//
-//    assertEquals("False, $0", graph.graphBusinessTrip(graph, path2));
-//
-//    ArrayList<String> path3 = new ArrayList<>();
-//    path3.add("Narnia");
-//    path3.add("Arendelle");
-//    path3.add("Naboo");
-//
-//    assertEquals("False, $0", graph.graphBusinessTrip(graph, path3));
+
   }
 
 }
