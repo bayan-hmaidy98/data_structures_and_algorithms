@@ -73,5 +73,17 @@ public class Graph<T> {
     }
     return visited;
   }
-  
+  public String graphBusinessTrip(Graph graph,List<String> cities){
+    Integer cost=0;
+    for (int i=0;i<cities.size()-1;i++){
+      Vertex<String> vertex=new Vertex<>(cities.get(i));
+      Vertex<String> vertex1=new Vertex<>(cities.get(i+1));
+      if (((Map)graph.getMap().get(vertex)).get(vertex1)!=null){
+        cost+=((Integer)((Map)graph.getMap().get(vertex)).get(vertex1));
+      }
+    }
+    return cost > 0 ? "True, $" + cost : "False, $" + cost;
+  }
+
+
 }
