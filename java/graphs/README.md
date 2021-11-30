@@ -3,3 +3,10 @@
 
 ### WhiteBoard
 ![](./assets/40.png)
+
+
+### challenge 38
+*Write a function called depthFirstSearch returns the vertices in list ordered in preoder. 
+
+### WhiteBoard
+![](./assets/41.png)

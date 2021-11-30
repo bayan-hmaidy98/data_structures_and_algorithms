@@ -85,5 +85,18 @@ public class Graph<T> {
     return cost > 0 ? "True, $" + cost : "False, $" + cost;
   }
 
+  public List<Vertex<T>> depthFirstSearch(Vertex<T> vertex) {
+    this.MyList.add(vertex);
+
+    if (!map.get(vertex).isEmpty()) {
+      for(Vertex<T> ver :getNeighbors(vertex) ) {
+        if (!MyList.contains(ver)){
+          depthFirstSearch(ver);
+        }
+      }
+    }
+    return MyList;
+  }
+
 
 }
